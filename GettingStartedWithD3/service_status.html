@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="d3.js"></script>
+    <script>
+        function draw(data) {
+            "use strict";
+            d3.select('body')
+                .append('ul')
+                .selectAll('li')
+                .data(data)
+                .enter()
+                .append('li')
+                .text(
+                    function (d) {
+                        return d.name + ': ' + d.status;
+                    }
+                );
+        }
+    </script>
+    <title>Template for D3 visualizations</title>
+</head>
+<body>
+<script>
+    var data_path = "data/service_status.json";
+    d3.json(data_path, draw)
+</script>
+
+</body>
+</html>
