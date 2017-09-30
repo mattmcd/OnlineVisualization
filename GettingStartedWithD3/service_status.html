@@ -17,6 +17,15 @@
                         return d.name + ': ' + d.status;
                     }
                 );
+
+            d3.selectAll('li')
+                .style('font-weight', function (d) {
+                    if (d.status[0] === "GOOD SERVICE") {
+                        return 'normal';
+                    } else {
+                        return 'bold';
+                    }
+                });
         }
     </script>
     <title>Template for D3 visualizations</title>
