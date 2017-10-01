@@ -1,7 +1,7 @@
-function draw(data) {
+var ss_vis = function () {
     "use strict";
 
-    function list_service_status() {
+    function list_service_status(data) {
         d3.select('body')
             .append('ul')
             .selectAll('li')
@@ -15,8 +15,6 @@ function draw(data) {
             );
     }
 
-    list_service_status();
-
     function bold_issues() {
         d3.selectAll('li')
             .style('font-weight', function (d) {
@@ -28,5 +26,16 @@ function draw(data) {
             });
     }
 
-    bold_issues();
-}
+
+    function draw(data) {
+
+        list_service_status(data);
+
+        bold_issues();
+    }
+
+    return {
+        'draw': draw
+    };
+
+}();
