@@ -57,7 +57,7 @@ bp_vis = (function () {
             .enter()
             .append('circle');
 
-        scale = get_scale(data);
+        var scale = get_scale(data);
         scale_circle(scale);
         add_x_axis(scale);
         add_y_axis(scale);
