@@ -2,16 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="lib/d3.js"></script>
-    <script src="src/bus_perf.js"></script>
+    <script data-main="main" src="require.js"></script>
     <title>Bus Performance</title>
     <link rel="stylesheet" href="css/bp.css">
 </head>
 <body>
-<script>
-    var data_path = "data/bus_perf.json";
-    d3.json(data_path, function (x) {bp_vis.draw(x, 'body');} );
-</script>
 
 </body>
 </html>

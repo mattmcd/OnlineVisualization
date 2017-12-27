@@ -1,5 +1,4 @@
-var bp_vis;
-bp_vis = (function () {
+define(['d3'], function (d3) {
     var margin = 50;
     var width = 700;
     var height = 300;
@@ -49,6 +48,7 @@ bp_vis = (function () {
 
     function draw(data, root) {
         root = typeof root !== 'undefined' ? root : 'body';
+        console.log('Entering draw, root element is ' + root);
         d3.select(root)
             .append('svg')
             .attr('width', width)
@@ -80,4 +80,4 @@ bp_vis = (function () {
         'draw': draw
     }
 
-})();
+});
