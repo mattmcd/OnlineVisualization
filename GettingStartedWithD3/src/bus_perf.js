@@ -2,8 +2,7 @@ define(['d3'], function (d3) {
     var margin = 50;
     var width = 700;
     var height = 300;
-    var root_id = '';
-    var svg = 'svg'
+    var svg = 'svg';
 
     function get_scale(data) {
         var x_extent = d3.extent(data, function (d) {
