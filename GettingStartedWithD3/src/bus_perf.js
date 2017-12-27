@@ -2,6 +2,8 @@ define(['d3'], function (d3) {
     var margin = 50;
     var width = 700;
     var height = 300;
+    var root_id = '';
+    var svg = 'svg'
 
     function get_scale(data) {
         var x_extent = d3.extent(data, function (d) {
@@ -30,7 +32,7 @@ define(['d3'], function (d3) {
 
     function add_x_axis(scale) {
         var x_axis = d3.axisBottom(scale.x);
-        d3.select('svg')
+        d3.select(svg)
             .append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate(0,'+ (height-margin) + ')')
@@ -39,7 +41,7 @@ define(['d3'], function (d3) {
 
     function add_y_axis(scale) {
         var y_axis = d3.axisLeft(scale.y);
-        d3.select('svg')
+        d3.select(svg)
             .append('g')
             .attr('class', 'y axis')
             .attr('transform', 'translate(' + margin + ',0)')
@@ -48,6 +50,9 @@ define(['d3'], function (d3) {
 
     function draw(data, root) {
         root = typeof root !== 'undefined' ? root : 'body';
+        if (root !== 'body') {
+            svg = root + ' svg';
+        }
         console.log('Entering draw, root element is ' + root);
         d3.select(root)
             .append('svg')
