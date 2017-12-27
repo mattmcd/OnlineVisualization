@@ -10,7 +10,7 @@
 <body>
 <script>
     var data_path = "data/bus_perf.json";
-    d3.json(data_path, bp_vis.draw);
+    d3.json(data_path, function (x) {bp_vis.draw(x, 'body');} );
 </script>
 
 </body>

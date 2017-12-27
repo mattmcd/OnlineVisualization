@@ -47,8 +47,9 @@ bp_vis = (function () {
             .call(y_axis);
     }
 
-    function draw(data) {
-        d3.select('body')
+    function draw(data, root) {
+        root = typeof root !== 'undefined' ? root : 'body';
+        d3.select(root)
             .append('svg')
             .attr('width', width)
             .attr('height', height)
